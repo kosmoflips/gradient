@@ -4,10 +4,13 @@
 
 -----
 
+2022-May-23: converted all codes to php, and now works only in a browser
 
-- can run the "core.pl" without setting up a web server, output to a static webpage, OR
+-----
+
+- ~~can run the "core.pl" without setting up a web server, output to a static webpage, OR~~
 - work interactively on server with a color picker (require spectrum.js https://github.com/bgrins/spectrum)
 
-plans (none will happen soon):
+~~plans (none will happen soon):
 - convert the interactive page to php -- NO plan to convert the core (yet)
-- limit intervals based on color value distance
+- limit intervals based on color value distance~~
