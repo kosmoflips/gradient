@@ -13,13 +13,13 @@ remember to change form action!
 - [ gradient_mixer.php ] core functions
 - [ show_mixed_grid.php ] prints mixed grid as html
 - [ style_grid.css ] styles
-- [ spectrum/ ] colour picker
+- [ spectrum/ ] colour picker by https://github.com/bgrins/spectrum
 
 -----
 
 - ~~can run the "core.pl" without setting up a web server, output to a static webpage, OR~~
 - work interactively on server with a color picker (require spectrum.js https://github.com/bgrins/spectrum)
 
-~~plans (none will happen soon):
-- convert the interactive page to php -- NO plan to convert the core (yet)
-- limit intervals based on color value distance~~
+~~plans (none will happen soon):~~
+- ~~convert the interactive page to php -- NO plan to convert the core (yet)~~
+- ~~limit intervals based on color value distance~~
