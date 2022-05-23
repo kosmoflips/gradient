@@ -21,8 +21,10 @@ require('gradient_mixer.php');
 <li>inspired by w3school's <a href="https://www.w3schools.com/colors/colors_mixer.asp" target="_blank">colour mixer</a>, mixing 2 sets of colours into a 2D table.</li>
 <li>acceptable formats: HEX, HEX 3-letter, RGB, separate by whitespaces</li>
 </ul>
-
-<form action="http://localhost:801/gradient/gradient_maker_upgrade.php" method="post">
+<?php
+print_r($_SERVER);
+?>
+<form action="/gradient" method="post">
 <div style="text-align:left;width:800px;border: 1px solid #aaa;margin:10px auto">
 <ul>
 	<li>x division - first colour will be at the top-left<br />
@@ -53,7 +55,7 @@ if (array_key_exists('submit',$_POST) and $_POST['submit'] == 'Mix') {
 
 </div>
 <div>
-<a href="/">www.pocchong.de</a> | <a href="https://github.com/kosmoflips/gradient">GradientMixer</a><br />
+<a href="/">www.pocchong.de</a> | <a href="https://github.com/kosmoflips/gradient2D">GradientMixer</a><br />
 2006-<script>document.write(new Date().getFullYear())</script> kiyoko@FairyAria
 </div>
 </body>

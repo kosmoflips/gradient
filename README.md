@@ -4,7 +4,16 @@
 
 -----
 
+remember to change form action!
+
+-----
+
 2022-May-23: converted all codes to php, and now works only in a browser
+- [ gmixer_wrapper.php ] interactive page to input colours and view mixed grid
+- [ gradient_mixer.php ] core functions
+- [ show_mixed_grid.php ] prints mixed grid as html
+- [ style_grid.css ] styles
+- [ spectrum/ ] colour picker
 
 -----
 
