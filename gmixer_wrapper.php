@@ -1,5 +1,6 @@
 <?php
 require('gradient_mixer.php');
+$workdir='/nerv/gradient2D';
 ?>
 <!DOCTYPE html>
 <html>
@@ -7,10 +8,10 @@ require('gradient_mixer.php');
 <title>Gradient Mixer 2D | Pocchong.de</title>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
 <!-- tweaked js, original: https://github.com/bgrins/spectrum -->
-<script src="spectrum/spectrum.js"></script>
-<script src="spectrum/setting.js"></script>
-<link rel="stylesheet" type="text/css" href="spectrum/spectrum.css" />
-<link rel="stylesheet" type="text/css" href="style_grid.css" />
+<script src="<?php echo $workdir; ?>/spectrum/spectrum.js"></script>
+<script src="<?php echo $workdir; ?>/spectrum/setting.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo $workdir; ?>/spectrum/spectrum.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo $workdir; ?>/style_grid.css" />
 </head>
 <body>
 <h1>Gradient Mixer 2D</h1>
@@ -21,9 +22,6 @@ require('gradient_mixer.php');
 <li>inspired by w3school's <a href="https://www.w3schools.com/colors/colors_mixer.asp" target="_blank">colour mixer</a>, mixing 2 sets of colours into a 2D table.</li>
 <li>acceptable formats: HEX, HEX 3-letter, RGB, separate by whitespaces</li>
 </ul>
-<?php
-print_r($_SERVER);
-?>
 <form action="/gradient" method="post">
 <div style="text-align:left;width:800px;border: 1px solid #aaa;margin:10px auto">
 <ul>
