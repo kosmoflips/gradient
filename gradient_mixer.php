@@ -140,7 +140,7 @@ public function get_colour($row,$col) {
 private function verify_clist ($cstr=Null) { # unify a list of colours
 	$xx=array();
 	if (gettype($cstr)!='array') {
-		$xs=preg_split('/\s+/', $cstr);
+		$xs=preg_split('/\s+/', trim($cstr));
 	} else {
 		$xs=$cstr;
 	}
