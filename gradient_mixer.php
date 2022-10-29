@@ -10,15 +10,22 @@ public $MATRIX = array(
 	'step' => 5, # step : for two colors c1 and c2, step =10 ==> there are 10 colours total from c1 to c2. so 8x intermediate colours between them. MINIMAL is therefore 2 meaning no intermediate colours
 	'matrix' => array()
 );
+public $is_preset=false;
 
 # setup
 public function setup ($x=Null,$y=Null,$step=0,$alpha=0,$bg=Null) {
 	# only verify if value isn't empty to avoid overwriting default values
-	if ($x) {
-		$this->MATRIX['x'] = $this->verify_clist($x);
-	}
-	if ($y) {
-		$this->MATRIX['y'] = $this->verify_clist($y);
+	if (!$x and !$y) { # load preset when neither x/y is given
+		$this->MATRIX['x']=$this->verify_clist('c98eff 467bdf');
+		$this->MATRIX['y']=$this->verify_clist('e6ff3a faa');
+		$this->is_preset=true;
+	} else {
+		if ($x) {
+			$this->MATRIX['x'] = $this->verify_clist($x);
+		}
+		if ($y) {
+			$this->MATRIX['y'] = $this->verify_clist($y);
+		}
 	}
 	if ($bg) {
 		$this->MATRIX['bg'] = $this->unify_colour($bg);
@@ -34,7 +41,7 @@ public function setup ($x=Null,$y=Null,$step=0,$alpha=0,$bg=Null) {
 	return 1;
 }
 public function mix ($x=Null, $y=Null, $step=Null) {
-	$this->setup($x,$y,$step);
+	// $this->setup($x,$y,$step);
 	$mx=array();
 	# extreme cases, no x or no y
 	if (count($this->MATRIX['x'])>0 and count($this->MATRIX['y'])>0) { # full mix x & y
@@ -137,6 +144,9 @@ public function get_colour($row,$col) {
 }
 
 # verify ENV data
+public function is_preset () {
+	return $this->is_preset;
+}
 private function verify_clist ($cstr=Null) { # unify a list of colours
 	$xx=array();
 	if (gettype($cstr)!='array') {

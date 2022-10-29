@@ -1,4 +1,7 @@
 <?php // print mixed colour matrix, don't use this page individually!
+if ($cx->is_preset()) {
+	echo "<h3>!! no colours given, loads the sample !!</h3>";
+}
 # 1. set up bg and alpha
 ?>
 <div class="grid-wrap" style="background: <?php echo $cx->colour2hex($cx->get_bg()) ?>"><!-- start of grid -->
@@ -10,10 +13,8 @@ if ($cx->get_alpha() != 1) { ?>
 } else { ?>
 <table class="center-table">
 <?php
-}
-?>
-
-<?php // print 1st row, marking input colours
+} # close {else}
+// print 1st row, marking input colours
 echo "<tr>";
 echo "<td></td>"; # one extra cell at beginning of row
 for ($i=0; $i<$cx->get_cols(); $i++) {
@@ -24,9 +25,8 @@ for ($i=0; $i<$cx->get_cols(); $i++) {
 	}
 }
 echo "</tr>\n";
-?>
 
-<?php // loop & print rows
+// loop & print rows
 for ($i=0; $i<$cx->get_rows(); $i++) {
 ?>
 <tr>
@@ -55,39 +55,12 @@ $txtcol=$cx->calc_text_colour($col); # show white text if color is dark
 		<?php echo $colcode2; ?></span>
 	</td>
 <?php
-/*
-	if ($showcode and $col->[3]) {
-		$txt=sprintf '<span class="refcol">%s</span>', $txt;
-	}
-	my $sline=sprintf '<td %sstyle="background: %s"><div%s>%s</div></td>',
-		($showcode==-1?'class="rotate"':''),
-		print_colour_code($col),
-		(calc_display_colour($col)?$showcol:''),
-		$txt;
-	my $cline=sprintf '<td class="hover-toggle" style="background: %s"><span class="normal-hidden"%s>%s<br />%s</span></td>',
-		print_colour_code($col),
-		($invert?' style="color:#fff"':''),
-		print_colour_code($col),
-		print_colour_code($col,1);
-	if ($showcode==1) {
-		printf $fh "%s%s", $sline, $cline;
-	}
-	elsif ($showcode==-1) {
-		printf $fh "%s", $sline;
-	} else {
-		printf $fh "%s", $cline;
-	}
-	*/
-?>
-<?php
 } // end of loop cells
 ?>
 </tr>
 <?php
 } // end of loop rows
 ?>
-
-
 </table>
 </div><!-- end of grid -->
 <hr />

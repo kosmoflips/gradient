@@ -43,17 +43,32 @@ $workdir='/nerv/gradient2D';
 
 <?php
 if (array_key_exists('submit',$_POST) and $_POST['submit'] == 'Mix') {
+	// print_r($_POST);exit;
 	$cx=new GradientMixer();
 	$cx->setup($_POST['x'],$_POST['y'],$_POST['step'],$_POST['alpha'],$_POST['bg']);
 	$cx->mix();
 	include('show_mixed_grid.php');
 }
 # else do nothing
+
+// git version for footer
+$gvfile0='/refs/heads/master';
+$gvfile='.git'.$gvfile0;
+if (file_exists($gvfile)) { // didn't verify yet, as i'm using this repo as submodule only
+	$gver=file_get_contents($gvfile);
+} else { # submodule mode
+	$gfdir0=file_get_contents('.git');
+	if (preg_match('/gitdir:\s*(\S+)/',$gfdir0,$x)) {
+		$gvfile=$x[1].$gvfile0;
+		$gver=file_get_contents($gvfile);
+	}
+}
+$gver1=substr($gver,0,7);
 ?>
 
 </div>
 <div>
-<a href="/">www.pocchong.de</a> | <a href="https://github.com/kosmoflips/gradient2D">GradientMixer</a><br />
+<a href="/">www.pocchong.de</a> | <a href="https://github.com/kosmoflips/gradient2D/tree/<?php echo $gver1; ?>">version: <?php echo $gver1??'unknown'; ?></a><br />
 2006-<script>document.write(new Date().getFullYear())</script> kiyoko@FairyAria
 </div>
 </body>
