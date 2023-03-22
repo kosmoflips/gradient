@@ -69,7 +69,7 @@ $gver1=substr($gver,0,7);
 </div>
 <div>
 <a href="/">www.pocchong.de</a> | <a href="https://github.com/kosmoflips/gradient2D/tree/<?php echo $gver1; ?>">version: <?php echo $gver1??'unknown'; ?></a><br />
-2006-<script>document.write(new Date().getFullYear())</script> kiyoko@FairyAria
+2006-<script>document.write(new Date().getFullYear())</script> kiyo@otoshigure
 </div>
 </body>
 </html>
