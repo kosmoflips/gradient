@@ -22,7 +22,7 @@ $workdir='/nerv/gradient2D';
 <li>inspired by w3school's <a href="https://www.w3schools.com/colors/colors_mixer.asp" target="_blank">colour mixer</a>, mixing 2 sets of colours into a 2D table.</li>
 <li>acceptable formats: HEX, HEX 3-letter, RGB, separate by whitespaces</li>
 </ul>
-<form action="/gradient" method="post">
+<form action="/gradient/" method="post">
 <div style="text-align:left;width:800px;border: 1px solid #aaa;margin:10px auto">
 <ul>
 	<li>x division - first colour will be at the top-left<br />
